@@ -250,7 +250,7 @@ def bagging_train_model(version, n, n_learners, epochs_lst, batch_size, votefuns
         else:
             x_train_i = x_train
             y_train_i = y_train
-        model, history = build_resnet(x_train, y_train, x_test, y_test, batch_size, epochs, n, version, data_augmentation, "bagging-model-"+str(i))
+        model, history = build_resnet(x_train_i, y_train_i, x_test, y_test, batch_size, epochs, n, version, data_augmentation, "bagging-model-"+str(i))
 
         print("model %d finished" % (i))
         scores = model.evaluate(x_train, y_train, verbose=1)
